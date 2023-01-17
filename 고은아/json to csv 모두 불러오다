@@ -1,0 +1,18 @@
+import os
+import json
+import pandas as pd
+import csv
+
+
+mother_path = 'C:\\Users\\USER\\Downloads\\유형별 두피 이미지\\Validation\\[라벨]모낭홍반농포_3.중증'
+all_file = os.listdir(mother_path)
+
+with open('output.csv', 'w', newline='') as output_f:
+    file = csv.writer(output_f)
+            
+    file.writerow(["images", "image_id", "value_1", "value_2", "value_3","value_4","value_5","value_6"])
+    for file in all_file:
+        file_full_path = os.path.join(mother_path, file)
+        with open(file_full_path , mode ='r', encoding = 'utf-8') as file:
+            data = json.load(file)
+            output_f.write(f"{data['image_file_name']},{data['image_id']},{data['value_1']},{data['value_2']},{data['value_3']},{data['value_4']},{data['value_5']},{data['value_6']}\n")
