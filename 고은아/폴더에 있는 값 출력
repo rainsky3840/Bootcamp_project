@@ -1,0 +1,7 @@
+import json
+import pandas as pd
+import os
+
+for x in os.listdir('C:\\Users\\USER\\Downloads\\유형별 두피 이미지\\Validation\\[라벨]모낭홍반농포_3.중증'):
+        if x.endswith('json'):
+            print(x)
