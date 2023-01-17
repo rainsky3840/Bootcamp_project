@@ -1,0 +1,18 @@
+import csv
+import json
+
+input_f = "C:\\Users\\USER\\Downloads\\유형별 두피 이미지\\Validation\\[라벨]모낭홍반농포_3.중증\\0643_A2LEBJJDE00048F_1606723340875_5_RH.json"
+output_f = "data.csv"
+
+with open(input_f, "r", encoding="utf-8", newline="") as input_file, \
+        open(output_f, "w", encoding="utf-8", newline="") as output_file:
+
+    data = []
+    for line in input_file:
+        datum = json.loads(line)
+        data.append(datum)
+        
+    csvwriter = csv.writer(output_file)
+    csvwriter.writerow(data[0].keys())
+    for line in data:
+        csvwriter.writerow(line.values())
