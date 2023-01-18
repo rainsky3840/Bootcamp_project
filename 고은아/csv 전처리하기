@@ -1,0 +1,28 @@
+import pandas as pd
+import json
+import csv
+
+from google.colab import drive
+drive.mount('/content/gdrive')
+
+!unzip '/content/gdrive/MyDrive/[원천]모낭사이홍반_1.경증.zip'
+image_path = '/content/gdrive/MyDrive/[원천]모낭사이홍반_1.경증.zip'
+
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+import tensorflow
+import torch
+import pandas
+import seaborn as sns
+import glob 
+import PIL
+import cv2
+import imageio #이미지 불러오기
+import skimage # Numpy배열로 이미지 객체를 다룬다.
+import skimage.io
+import skimage.transform
+from sklearn.model_selection import train_test_split
+
+df = pd.read_csv('/content/sample_data/모낭사이홍반_1.경증.csv')
+df.sample(10) #csv 10개만 출력해보기
