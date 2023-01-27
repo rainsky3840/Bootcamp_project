@@ -1,0 +1,12 @@
+!ls
+
+import pandas as pd #데이터 처리,csv파일 읽고 쉽게 가공 하도록 한다.
+df = pd.read_csv('/content/diabetes_012_health_indicators_BRFSS2015.csv')
+
+df
+
+df.isnull()
+
+df.isnull().sum()
+
+df["Diabetes_012"].value_counts() #0은 당뇨에 걸리지 않은 사람, 1은 당뇨에 걸리기 전인 사람. 2는 당뇨에 걸린 사람

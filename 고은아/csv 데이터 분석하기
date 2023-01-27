@@ -1,0 +1,51 @@
+import pandas as pd
+import json
+import csv
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+import tensorflow
+import torch
+import pandas
+import seaborn as sns
+
+import glob #파일명 다 긁어오기
+import PIL
+import cv2 #이미지 데이터 전처리, 이미지 불러오기
+
+import imageio #이미지 불러오기
+import skimage # Numpy배열로 이미지 객체를 다룬다.
+import skimage.io
+import skimage.transform
+
+from sklearn.model_selection import train_test_split
+
+df = pd.read_csv('/content/total.csv', encoding='cp949') #글씨가 깨져서 인코딩 해주었다
+
+df.sample(10) #잘 되었나 샘플 10개만 출력해보기
+
+#미세각질 별로
+plt.figure(figsize=(17,8))
+sns.countplot (df['미세각질'])
+plt.show()
+
+#피지과다 별로
+plt.figure(figsize=(17, 8))
+sns.countplot(df['피지과다'])
+plt.show()
+
+#비듬 별로
+plt.figure(figsize=(17, 8))
+sns.countplot(df['비듬'])
+plt.show()
+
+#탈모 별로
+plt.figure(figsize=(17, 8))
+sns.countplot(df['탈모'])
+plt.show()
+
+#전부다해보기
+plt.figure(figsize=(17, 8))
+sns.countplot(df['비듬']), sns.countplot(df['탈모'], sns.countplot(df['피지과다']), sns.countplot(df['미세각질']), sns.countplot(df['모낭사이홍반']), sns.countplot(df['모낭사이홍반/농포']))
+plt.show()
+#이부분은 좀 
