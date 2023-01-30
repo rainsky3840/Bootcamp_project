@@ -20,7 +20,7 @@ model = cached_model()
 df = get_dataset()
 
 st.header('심리상담 챗봇')
-st.markdown("[❤️테스트❤️](https://www.youtube.com/c/빵형의개발도상국)")
+st.markdown("[김정환](https://www.github.com/rainsky3840)")
 
 if 'generated' not in st.session_state:
     st.session_state['generated'] = []
